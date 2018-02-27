@@ -14,6 +14,7 @@ class FastlaneTestUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         let app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
     }
     
@@ -29,7 +30,9 @@ class FastlaneTestUITests: XCTestCase {
 
     func testClickButton() {
         let app = XCUIApplication()
+        snapshot("Yellow View Controller")
         app.buttons["Next"].tap()
+        snapshot("Blue View Controller")
         let backButton = app.navigationBars["UIView"].buttons["Back"]
         backButton.tap()
     }
