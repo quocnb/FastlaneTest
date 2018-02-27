@@ -15,5 +15,6 @@ platform :ios do
   desc "Description of what the lane does"
   lane :quoc do
     snapshot
+    frameit(white: true)
   end
 end
